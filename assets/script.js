@@ -12,13 +12,17 @@ function writePassword() {
 
 }
 
+
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
 function generatePassword(){
 
   // user prompts to select the parameters they wish to use
-  var passwordLength = window.prompt("How long would you like your password to be?");
+  do{
+  var passwordLength = window.prompt("How long would you like your password to be? Please select a value of 8 characters up to 128 characters.");
+  } while (passwordLength < 8 || passwordLength > 128);
 
   var includeUpperCase = window.confirm("Would you like to include uppercase characters?");
   
